@@ -1,29 +1,59 @@
 body{
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 header{
     text-align: center;
     padding: 20px;
+    width: 80%;
 }
-textarea{
-    width: 100%;
+ul{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 80%;
 }
 
 #btn-send{
-    display: block;
+    text-align:    center;
+    text-shadow:   1px 1px #666666;
+    font-size:     1em;
+    background:    #1d6a96; 
+    background:    linear-gradient(#46abee, #1d5196 50%, #1056da);
+    border-radius: 12px;
+    padding:       6px 8px;
+    color:         #ffffff;
+    height: 40px;
+}
+#btn-send:disabled{
+    background: #94bfd8;
 }
 #bio, #postarea{
-    min-width: 30%; 
+    width: 80%;
+    text-align: center;
+    /* border: solid 1px blue; */
+
+}
+#footerpost{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;;
+    /* border: solid 1px blue; */
+}
+#text{
+    width: 90%;
+    padding: 10px;
+    overflow: 
+}
+#timelinearea{
+    width: 80%;
 }
 #timelinearea li{
     padding: 10px;
     margin: 10px 0;
     list-style: none;
     border: solid 1px blue;
-
-}
-
-.uptext{
-    display: flex;
-    justify-content: space-evenly;
+    border-radius: 12px;
+    overflow: auto;
 }

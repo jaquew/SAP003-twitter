@@ -8,26 +8,25 @@
     <title>Twee Tar</title>
 </head>
 <body>
-    <header>
-        <h1>Twee Tar</h1>
+  <header>
+    <h1>Twee Tar</h1>
 
-    </header>
-    <section class="uptext">
-        <div id="bio">
-            <h3>Nome</h3>
-            <p>29 yo, female, brazilian</p>
-        </div>
-        <form id=postarea>
-            <p>No quê você está pensando?</p>
-            <input type="text" id="text">
-            <button type="submit" id="btn-send" disabled>Enviar</button>
-
-        </form>
-    </section>
-    <section id="timelinearea">
-        <ul id="timeline"></ul>
-    </section>
-    
-    <script src="index.js"></script>
+  </header>
+  <section id="bio">
+    <h3>Jaqueline</h3>
+    <p>29 yo, female, brazilian</p>
+  </section>
+  <form id="postarea">
+    <textarea type="text" id="text" placeholder="What's happening?" autocomplete="off" autofocus></textarea>
+    <footer id="footerpost">
+      <p id="count">140</p>
+      <button type="submit" id="btn-send" disabled>Twitar</button>
+    </footer>
+  </form>
+  <section id="timelinearea">
+    <ul id="timeline"></ul>
+  </section>
+  
+  <script src="index.js"></script>
 </body>
 </html>

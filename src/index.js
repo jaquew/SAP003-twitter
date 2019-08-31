@@ -30,4 +30,27 @@ function postatxt() {
   localStorage.setItem(localStorage.clickcount, text);
 
   document.getElementById("timeline").innerHTML+= "<li>"+localStorage.getItem(localStorage.clickcount) + "</li> "
+  document.getElementById("text").focus();
+}
+
+// contador de caracteres
+document.getElementById("text").addEventListener("keyup", charCount)
+function charCount(){
+  let charNumber = document.getElementById("text").value.length
+  // imprime na tela
+  document.getElementById("count").innerHTML= 140 - charNumber
+  
+  // desabilitar o botao caso ultrapasse 140
+  if (charNumber>140) {
+    document.getElementById("btn-send").disabled = true
+  }
+  
+  // mudar de cor
+  if (charNumber < 120){
+    document.getElementById("count").style.color="black"
+  } else if (charNumber < 130){
+    document.getElementById("count").style.color="orange"
+  } else if (charNumber >= 130){
+      document.getElementById("count").style.color="red"
+  }
 }
