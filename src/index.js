@@ -27,11 +27,17 @@ function clickCounter() {
 
 function postatxt() {
   let text = document.getElementById("text").value;
-  localStorage.setItem(localStorage.clickcount, text);
 
-  document.getElementById("timeline").innerHTML+= "<li>"+localStorage.getItem(localStorage.clickcount) + "</li> "
+  let today = new Date()
+  let postTime =  today.getHours() + ":" + today.getMinutes() 
+
+  document.getElementById("timeline").innerHTML += "<li>"+ text + "<br>" + postTime + "</li>"
+  
+  localStorage.setItem(localStorage.clickcount, text + "<br>" + postTime);
+
   document.getElementById("text").focus();
 }
+
 
 // contador de caracteres
 document.getElementById("text").addEventListener("keyup", charCount)
@@ -53,4 +59,14 @@ function charCount(){
   } else if (charNumber >= 130){
       document.getElementById("count").style.color="red"
   }
+
+  auto_grow()
+  
+}
+
+//aumentar area
+let textarea = document.getElementById("text")
+function auto_grow() {
+  textarea.style.height = "10px";
+  textarea.style.height = (textarea.scrollHeight)- 10 + "px";
 }

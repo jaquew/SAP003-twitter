@@ -9,22 +9,25 @@
 </head>
 <body>
   <header>
-    <h1>Twee Tar</h1>
+    <h1>tweeter</h1>
 
   </header>
-  <section id="bio">
+  <section id="postarea">
     <h3>Jaqueline</h3>
     <p>29 yo, female, brazilian</p>
-  </section>
-  <form id="postarea">
-    <textarea type="text" id="text" placeholder="What's happening?" autocomplete="off" autofocus></textarea>
-    <footer id="footerpost">
+  
+    <form>
+      <textarea type="text" id="text" placeholder="What's happening?" autocomplete="off" contenteditable="true" autofocus></textarea>
+      <footer id="footerpost">
       <p id="count">140</p>
       <button type="submit" id="btn-send" disabled>Twitar</button>
-    </footer>
-  </form>
+      </footer>
+    </form>
+</section>
+
   <section id="timelinearea">
     <ul id="timeline"></ul>
+    <p id="time"></p>
   </section>
   
   <script src="index.js"></script>

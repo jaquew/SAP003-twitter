@@ -1,18 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:800&display=swap');
 body{
-    padding: 20px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: url(bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed
 }
 header{
     text-align: center;
-    padding: 20px;
-    width: 80%;
+    padding: 10px;
+    width: 80%;    
 }
-ul{
-    display: flex;
-    flex-direction: column-reverse;
-    width: 80%;
+header h1{
+    color: #0d3cd8;
+    font-family: 'Dosis', sans-serif;
+    font-size: 4em;
+    /* line-height: 40px; */
+    margin: 0;
 }
 
 #btn-send{
@@ -29,31 +36,46 @@ ul{
 #btn-send:disabled{
     background: #94bfd8;
 }
-#bio, #postarea{
+#postarea{
     width: 80%;
     text-align: center;
-    /* border: solid 1px blue; */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.37);
+    border-radius: 12px;
 
 }
 #footerpost{
     display: flex;
     justify-content: space-between;
     padding: 10px 25px;;
-    /* border: solid 1px blue; */
+    width: 80%;
+    margin: 0 auto;
 }
 #text{
     width: 90%;
     padding: 10px;
-    overflow: 
+    resize: none;
+    overflow: hidden;
+    font-size: 1.4em;
 }
-#timelinearea{
+#timelinearea {
     width: 80%;
+    margin: 0;
+    padding: 10px;
 }
-#timelinearea li{
+
+#timeline {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px;
+}
+
+#timeline li{
     padding: 10px;
     margin: 10px 0;
     list-style: none;
     border: solid 1px blue;
     border-radius: 12px;
     overflow: auto;
+    background: rgba(255, 255, 255, 0.733);
 }
