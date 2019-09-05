@@ -1,3 +1,25 @@
+let tweetArray = []
+let timeArray = []
+let nome
+let idade
+
+//dados do usário
+if(localStorage.getItem("nome")!==null){
+  document.getElementById("name").innerHTML = localStorage.getItem("nome")
+} else {
+  username = window.prompt("Qual seu nome?")
+  localStorage.setItem("nome", username)
+  document.getElementById("name").innerHTML = username
+}
+if(localStorage.getItem("idade")!==null){
+  document.getElementById("age").innerHTML = localStorage.getItem("idade")
+} else {
+  userAge = window.prompt("Qual sua idade?")
+  localStorage.setItem("idade",userAge)
+  document.getElementById("age").innerHTML = userAge
+}
+
+
 // Desativa o botão se o campo se tiver vazio
 document.getElementById("text").addEventListener("keyup", btn)
 function btn(){
@@ -8,36 +30,39 @@ function btn(){
   }
 }
 
-// imprime os tweets que já estão salvos
-for(i=1; i<localStorage.length;i++){
-  document.getElementById("timeline").innerHTML += "<li>" + localStorage.getItem(i) + "</li>"
-}
-
-// função para contar os cliques e armazenar no local storage
-document.getElementById("btn-send").addEventListener("click", clickCounter)
- 
-function clickCounter() {
-  if (localStorage.clickcount) {
-    localStorage.clickcount = Number(localStorage.clickcount)+1;
-  } else {
-    localStorage.clickcount = 1;
+//recuperar local storage, se existir
+if (localStorage.getItem("tweet")!==null){
+  tweetArray = JSON.parse(localStorage.getItem("tweet"))
+  timeArray =  JSON.parse(localStorage.getItem("time"))
+  for(let i in tweetArray){
+    document.getElementById("timeline").innerHTML += "<li>" + tweetArray[i].replace(/(?:\r\n|\r|\n)/g,"<br>") + "<br>" + timeArray[i]  + "</li>"
   }
-  postatxt()
 }
 
+document.getElementById("btn-send").addEventListener("click", postatxt)
 function postatxt() {
-  let text = document.getElementById("text").value;
-
+  event.preventDefault()
+  //get time
   let today = new Date()
-  let postTime =  today.getHours() + ":" + today.getMinutes() 
+  let time = today.getHours() + ":" + (today.getMinutes()<10?'0':'') + today.getMinutes()
+  //get text
+  let text = document.getElementById("text").value
 
-  document.getElementById("timeline").innerHTML += "<li>"+ text + "<br>" + postTime + "</li>"
-  
-  localStorage.setItem(localStorage.clickcount, text + "<br>" + postTime);
+  tweetArray.push(text);
+  timeArray.push(time)
 
+  //colocar na storage
+  localStorage.setItem("tweet", JSON.stringify(tweetArray))
+  localStorage.setItem("time", JSON.stringify(timeArray))
+
+  //imprimir na tela
+  document.getElementById("timeline").innerHTML += "<li>"+ text.replace(/(?:\r\n|\r|\n)/g,"<br>")  + "<br>" + time + "</li>"
+
+  //limpar
+  document.getElementById("text").value = "";
   document.getElementById("text").focus();
+  document.getElementById("btn-send").disabled = true
 }
-
 
 // contador de caracteres
 document.getElementById("text").addEventListener("keyup", charCount)
@@ -60,13 +85,12 @@ function charCount(){
       document.getElementById("count").style.color="red"
   }
 
-  auto_grow()
-  
+  auto_grow()  
 }
 
 //aumentar area
 let textarea = document.getElementById("text")
 function auto_grow() {
   textarea.style.height = "10px";
-  textarea.style.height = (textarea.scrollHeight)- 10 + "px";
+  textarea.style.height = (textarea.scrollHeight)- 5 + "px";
 }
