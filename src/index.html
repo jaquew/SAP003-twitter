@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Twee Tar</title>
+    <title>Tweeter</title>
 </head>
 <body>
   <header>
@@ -13,13 +13,13 @@
 
   </header>
   <section id="postarea">
-    <h3>Jaqueline</h3>
-    <p>29 yo, female, brazilian</p>
+    <h3 id="name">Jaqueline</h3>
+    <p><span id="age">29</span> anos</p>
   
     <form>
-      <textarea type="text" id="text" placeholder="What's happening?" autocomplete="off" contenteditable="true" autofocus></textarea>
+      <textarea type="text" id="text" placeholder="Escreva alguma coisa" autocomplete="off" contenteditable="true" autofocus></textarea>
       <footer id="footerpost">
-      <p id="count">140</p>
+      <strong><p id="count">140</p></strong>
       <button type="submit" id="btn-send" disabled>Twitar</button>
       </footer>
     </form>
