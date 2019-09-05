@@ -15,10 +15,10 @@ header{
     width: 80%;    
 }
 header h1{
-    color: #0d3cd8;
+    color: #004ca3;
+    text-shadow: 2px 2px #ffffff;
     font-family: 'Dosis', sans-serif;
-    font-size: 4em;
-    /* line-height: 40px; */
+    font-size: 3rem;
     margin: 0;
 }
 
@@ -31,25 +31,28 @@ header h1{
     border-radius: 12px;
     padding:       6px 8px;
     color:         #ffffff;
-    height: 40px;
+    height:        40px;
 }
 #btn-send:disabled{
     background: #94bfd8;
 }
 #postarea{
-    width: 80%;
-    text-align: center;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.37);
+    width:         80%;
+    text-align:    center;
+    padding:       10px;
+    background:    rgba(255, 255, 255, 0.37);
     border-radius: 12px;
-
+}
+#postarea h3, #postarea p{
+    margin: 6px 0;
 }
 #footerpost{
     display: flex;
     justify-content: space-between;
-    padding: 10px 25px;;
+    padding: 0 25px;;
     width: 80%;
     margin: 0 auto;
+    font-size: 1.2em;
 }
 #text{
     width: 90%;
@@ -57,6 +60,8 @@ header h1{
     resize: none;
     overflow: hidden;
     font-size: 1.4em;
+    border-radius: 8px;
+    height: 20px;
 }
 #timelinearea {
     width: 80%;
@@ -67,15 +72,16 @@ header h1{
 #timeline {
     display: flex;
     flex-direction: column-reverse;
-    padding: 10px;
+    padding: 0 10px;
+    margin: 0;
 }
 
 #timeline li{
     padding: 10px;
     margin: 10px 0;
     list-style: none;
-    border: solid 1px blue;
-    border-radius: 12px;
+    border: solid 1px #1d6a96;
+    border-radius: 8px;
     overflow: auto;
-    background: rgba(255, 255, 255, 0.733);
+    background: rgb(255, 255, 255);
 }
