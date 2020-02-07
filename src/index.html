@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png">
     <title>Tweeter</title>
 </head>
 <body>
-  <header>
-    <h1>tweeter</h1>
-
+  <header class="logo">
+    tweeter.old
+    <img id="logo" src="images/logo.png"/>
   </header>
-  <section id="postarea">
-    <h3 id="name">Jaqueline</h3>
-    <p><span id="age">29</span> anos</p>
-  
-    <form>
-      <textarea type="text" id="text" placeholder="Escreva alguma coisa" autocomplete="off" contenteditable="true" autofocus></textarea>
-      <footer id="footerpost">
-      <strong><p id="count">140</p></strong>
-      <button type="submit" id="btn-send" disabled>Twitar</button>
-      </footer>
-    </form>
-</section>
+  <div class="main">
+    <aside class="user-data">
+      <img class="avatar" src="images/avatar.jpg"/>
+      <div>
+        <h3 class="name"></h3>
+        <p id="length"></p>
 
-  <section id="timelinearea">
-    <ul id="timeline"></ul>
-    <p id="time"></p>
+      </div>
+    </aside>
+    <section class="post-area">
+      <div id="post-title">
+        <p>No que está pensando?</p>
+        <strong><p id="count">280</p></strong>
+      </div>
+      <form class="post-form">
+        <textarea type="text" id="text" placeholder="Escreva alguma coisa" autocomplete="off" contenteditable="true" autofocus></textarea>
+        <button type="submit" id="btn-send" disabled>Tweet</button>
+      </form>
+      <article id="timelinearea">
+        <ul id="timeline">
+
+          <!-- <p id="time"></p> -->
+        </ul>
+      </article>
   </section>
+</div>
+
+
   
   <script src="index.js"></script>
 </body>
